@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import calendar
-from recommendation_engine import recommend_schedule, recommend_companies, find_popular_companies, find_company_name
-from load_data import load_company_data, load_event_attendance_data
-from DOW_hour import generate_DOW_hour_attendance_heatmap
-from month_DOW import generate_month_DOW_attendance_heatmap
-from month_hour import generate_month_hour_attendance_heatmap
+from backend.recommendation_engine import recommend_schedule, recommend_companies, find_popular_companies, find_company_name
+from backend.load_data import load_company_data, load_event_attendance_data
+from backend.DOW_hour import generate_DOW_hour_attendance_heatmap
+from backend.month_DOW import generate_month_DOW_attendance_heatmap
+from backend.month_hour import generate_month_hour_attendance_heatmap
 import calendar
 
 st.set_page_config(page_title="Dashboard", layout="wide")
