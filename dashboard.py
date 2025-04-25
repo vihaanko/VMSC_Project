@@ -220,7 +220,7 @@ with tabs[3]:
 
     if selected_company:
         st.subheader(f"Companies similar to **{selected_company}** based on business sectors")
-        recommendations_df = recommend_companies(selected_company, cleaned_company_visits, cleaned_event_attendances)
+        recommendations_df = recommend_companies(selected_company, cleaned_company_visits, cleaned_event_attendance)
 
         if not recommendations_df.empty:
             st.dataframe(recommendations_df.reset_index(drop=True), use_container_width=True)
