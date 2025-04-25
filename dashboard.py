@@ -140,15 +140,15 @@ with tabs[0]:
 with tabs[1]:
     st.header("Login Trends")
     st.header("Month and Hour Heatmap")
-    generate_month_hour_attendance_heatmap('CLEANED_attendances_by_month_and_hour.csv')
+    generate_month_hour_attendance_heatmap('backend/CLEANED_attendances_by_month_and_hour.csv')
     st.image('heatmap_month_hour.png', caption='Attendance by Month and Start Hour')
 
     st.header("Month and Day of Week Heatmap")
-    generate_month_DOW_attendance_heatmap('CLEANED_attendances_by_month_and_DOW.csv')
+    generate_month_DOW_attendance_heatmap('backend/CLEANED_attendances_by_month_and_DOW.csv')
     st.image('heatmap_month_DOW.png', caption='Attendance by Month and Day of Week')
 
     st.header("Day of Week and Hour Heatmap")
-    generate_DOW_hour_attendance_heatmap('CLEANED_attendances_by_DOW_and_hour.csv')
+    generate_DOW_hour_attendance_heatmap('backend/CLEANED_attendances_by_DOW_and_hour.csv')
     st.image('heatmap_DOW_hour.png', caption='Attendance by Day of Week and Start Hour')
 
 # Tab 3: Company Visits
