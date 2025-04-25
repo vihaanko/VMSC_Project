@@ -56,7 +56,6 @@ tabs = st.tabs(["📊 Event Insights", "🔐 Login Trends", "🏢 Company Visits
 cleaned_event_attendance = load_data("backend/Cleaned_Event_Attendance.csv",
                                      key = "Event_Attendance_Uploader",
                                      uploader_text = "Upload Event Attendance File Here")
-cleaned_event_attendance["event_date"] = pd.to_datetime(cleaned_event_attendance["event_date"])
 cleaned_event_attendance = clean_data(cleaned_event_attendance)
 
 cleaned_company_visits = load_data("backend/Cleaned_Company_Visits.csv",
@@ -66,7 +65,7 @@ cleaned_company_visits = load_data("backend/Cleaned_Company_Visits.csv",
 cleaned_company_visits = clean_data(cleaned_company_visits)
 
 cleaned_event_attendance.columns = cleaned_event_attendance.columns.str.strip().str.lower().str.replace(" ", "_")
-cleaned_event_attendance['event_date'] = cleaned_event_attendance.to_datetime(df['event_date'])
+cleaned_event_attendance['event_date'] = pd.to_datetime(df['event_date'])
 cleaned_event_attendance['day_of_week'] = cleaned_event_attendance['event_date'].dt.day_name()
 cleaned_event_attendance['month'] = cleaned_event_attendance['event_date'].dt.month
 
