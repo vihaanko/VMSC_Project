@@ -177,7 +177,7 @@ with tabs[2]:
 
     st.header("Company & Sector Analysis")
 
-    analysis = find_popular_companies(cleaned_event_attendances, cleaned_company_visits)
+    analysis = find_popular_companies(cleaned_event_attendance, cleaned_company_visits)
 
     st.subheader("Company Attendance Ranking")
     st.dataframe(analysis["company_rank"])
