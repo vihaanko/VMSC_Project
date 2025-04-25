@@ -65,6 +65,14 @@ cleaned_company_visits = load_data("backend/Cleaned_Company_Visits.csv",
 
 cleaned_company_visits = clean_data(cleaned_company_visits)
 
+cleaned_event_attendance.columns = cleaned_event_attendance.columns.str.strip().str.lower().str.replace(" ", "_")
+cleaned_event_attendance['event_date'] = cleaned_event_attendance.to_datetime(df['event_date'])
+cleaned_event_attendance['day_of_week'] = cleaned_event_attendance['event_date'].dt.day_name()
+cleaned_event_attendance['month'] = cleaned_event_attendance['event_date'].dt.month
+
+cleaned_company_visits.columns = cleaned_company_visits.columns.str.strip().str.lower().str.replace(" ", "_")
+cleaned_company_visits["company"] = cleaned_company_visits["company"].str.strip().str.lower()
+
 with tabs[0]:
     st.header("Event Insights")
 
@@ -191,11 +199,7 @@ with tabs[3]:
     # Recommended Event Strategy Section
     st.header("Recommendation Engine")
     st.subheader("Recommended Event Strategy:")
-    df = cleaned_event_attendance.copy()
-    df['event_date'] = pd.to_datetime(df['event_date'])
-    df['day_of_week'] = df['event_date'].dt.day_name()
-    df['month'] = df['event_date'].dt.month
-    newDF = recommend_schedule(df)
+    newDF = recommend_schedule(cleaned_event_attendance)
     st.markdown(f"Best Day of the Week: {newDF['best_day']}")
     st.markdown(f"Best Month: {newDF['best_month']}")
     st.markdown(f"Most Successful Event Type: {newDF['best_type']}")
