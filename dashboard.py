@@ -188,12 +188,10 @@ with tabs[2]:
 # Tab 4: Recommendation Engine
 with tabs[3]:
 
-    cleaned_event_attendances = load_event_attendance_data()
-
     # Recommended Event Strategy Section
     st.header("Recommendation Engine")
     st.subheader("Recommended Event Strategy:")
-    newDF = recommend_schedule(cleaned_event_attendances)
+    newDF = recommend_schedule(cleaned_event_attendance)
     st.markdown(f"Best Day of the Week: {newDF['best_day']}")
     st.markdown(f"Best Month: {newDF['best_month']}")
     st.markdown(f"Most Successful Event Type: {newDF['best_type']}")
