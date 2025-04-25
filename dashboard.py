@@ -193,7 +193,7 @@ with tabs[3]:
     st.subheader("Recommended Event Strategy:")
     df = cleaned_event_attendance.copy()
     df['day_of_week'] = df['event_date'].dt.dayofweek
-    newDF = recommend_schedule(cleaned_event_attendance)
+    newDF = recommend_schedule(df)
     st.markdown(f"Best Day of the Week: {newDF['best_day']}")
     st.markdown(f"Best Month: {newDF['best_month']}")
     st.markdown(f"Most Successful Event Type: {newDF['best_type']}")
