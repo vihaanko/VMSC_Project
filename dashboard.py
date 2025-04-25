@@ -175,10 +175,6 @@ with tabs[2]:
 
     st.pyplot(fig3)
 
-    
-    # Recommended Companies Section
-    cleaned_event_attendances = load_event_attendance_data()
-
     st.header("Company & Sector Analysis")
 
     analysis = find_popular_companies(cleaned_event_attendances, cleaned_company_visits)
